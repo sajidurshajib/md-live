@@ -1,11 +1,19 @@
 function textAreaFunc() {
+    let txtarea = document.getElementById('textarea');
+
     // clear all child node before append
     document.getElementById('root').innerHTML = '';
 
+    // text area height
+    let lineNumber = txtarea.value.split('\n').length;
+    if (lineNumber > 5) {
+        console.log(lineNumber);
+        txtarea.rows = lineNumber;
+    }
+
     // get all text
-    allText = document.getElementById('textarea').value;
+    allText = txtarea.value;
     lines = allText.split('\n');
-    console.log(lines);
 
     // fetch all line
     lines.forEach((element) => {
